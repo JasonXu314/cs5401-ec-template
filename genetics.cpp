@@ -1,8 +1,8 @@
 #include "genetics.h"
 
 Individual randIndividual() {
-	GENOME_REP genome = GENOME_REP(0);	// TODO: after cloning template, implement randomness
-	FITNESS_REP fitness = FITNESS_REP(0);
+	GENOME genome = GENOME(0);	// TODO: after cloning template, implement randomness
+	FITNESS fitness = FITNESS(0);
 
 	return Individual{genome, fitness};
 }
@@ -67,7 +67,7 @@ Individual* mutatePopulation(const Individual* const population, uint size, doub
 
 void evaluateIndividual(Individual& individual) {
 	// TODO: after cloning template, implement evaluation
-	individual.fitness = FITNESS_REP(0);
+	individual.fitness = FITNESS(0);
 }
 
 void evaluatePopulation(Individual* const population, uint size) {
@@ -80,7 +80,7 @@ void rankPopulation(const Individual* population, uint size) { std::sort(populat
 
 Individual* selectParents(const Individual* const population, uint size) {
 	Individual* parents = new Individual[size];
-	FITNESS_REP totalFitness = FITNESS_REP(0);
+	FITNESS totalFitness = FITNESS(0);
 
 	for (uint i = 0; i < size; i++) {
 		totalFitness += population[i].fitness;
@@ -90,7 +90,7 @@ Individual* selectParents(const Individual* const population, uint size) {
 		double selected = rng() * totalFitness;
 
 		int idx = -1;
-		FITNESS_REP fitnessThreshold = 0;
+		FITNESS fitnessThreshold = 0;
 		while (fitnessThreshold >= selected) {
 			idx++;
 			fitnessThreshold += population[idx].fitness;

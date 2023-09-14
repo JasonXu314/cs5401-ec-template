@@ -7,7 +7,7 @@
 using namespace std;
 
 #define POP_SIZE 50
-#define TARGET_FITNESS FITNESS_REP(0)
+#define TARGET_FITNESS FITNESS(0)
 #define RECOMBINATION_RATE 0.8
 
 int main(int argc, char** argv) {
@@ -18,7 +18,7 @@ int main(int argc, char** argv) {
 		evaluatePopulation(population, POP_SIZE);
 		rankPopulation(population, POP_SIZE);
 
-		FITNESS_REP bestFitness = population[0].fitness;
+		FITNESS bestFitness = population[0].fitness;
 
 		uint generation = 0;
 		while (bestFitness < TARGET_FITNESS) {

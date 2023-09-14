@@ -4,8 +4,8 @@
 #include <algorithm>
 
 #include "Individual.h"
-#include "params-default.h"
 #include "randutils.h"
+#include "representation.h"
 #include "typeutils.h"
 
 // TODO: consider removing individual/pair/population and just making function overloads
