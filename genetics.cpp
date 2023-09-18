@@ -91,7 +91,7 @@ Individual* selectParents(const Individual* const population, uint size) {
 
 		int idx = -1;
 		FITNESS fitnessThreshold = 0;
-		while (fitnessThreshold >= selected) {
+		while (selected >= fitnessThreshold) {
 			idx++;
 			fitnessThreshold += population[idx].fitness;
 		}
